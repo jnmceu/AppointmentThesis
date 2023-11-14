@@ -1,0 +1,108 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Appointment Scheduling Page";
+}
+<!-- ScheduleAppointment.cshtml -->
+
+<!-- Yung body wag niyo lalagyan ng padding or margin. Yung ibang div nalang maliban sa body noted po-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Appointment Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*padding: 20px;*/
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto; /* Increased margin for better spacing */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .gender-group {
+            margin-bottom: 10px;
+        }
+
+        .gender-label {
+            display: inline-block;
+            width: 70px; /* Adjusted width for better alignment */
+            margin-right: 10px; /* Adjusted margin for closer spacing */
+        }
+
+        .gender-input {
+            display: inline-block;
+            vertical-align: middle; /* Align buttons vertically with the labels */
+        }
+
+        button {
+            background-color: #fcbacb;
+            color: #5a5a5a;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #fcbacb;
+            }
+    </style>
+</head>
+<body>
+    <h1>Schedule Clinic Appointment</h1>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dateTime">Date and Time:</label>
+        <input type="datetime-local" id="dateTime" name="dateTime" required>
+
+        <label for="patientNumber">Patient Number:</label>
+        <input type="text" id="patientNumber" name="patientNumber" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="gender-group">
+            <label class="gender-label" for="male">Gender:</label>
+            <div class="gender-input">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label class="gender-label" for="male">Male</label>
+            </div>
+
+            <div class="gender-input">
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label class="gender-label" for="female">Female</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="generateQRCode()">Submit</button>
+    </form>
+
+    <script>
+        function generateQRCode() {
+            // Add logic to generate QR code here
+            // You can use a library like QRCode.js
+            alert('QR code generated!');
+        }
+    </script>
+</body>
+</html>
